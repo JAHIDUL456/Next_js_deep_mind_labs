@@ -26,14 +26,17 @@ const page = () => {
 
     //Data delete korar jonno
 
-    const del=async(id)=>{
+    const del=(id)=>{
         const newdata= data.filter((item)=>item.id!==id);
         setdata(newdata);
     }
 
     // data show koranor jonno 
+    const views=(content)=>{
+        alert(content);
+    }
 
-    
+
 
 
 
@@ -55,7 +58,11 @@ const page = () => {
         </div>
         </div>
         <div className='text-white w-full p-2 ml-5'> 
-
+            
+            {data.length === 0 && !loading &&
+            <p className='text-2xl font-bold text-white text-center'>Press the button to view data</p>
+            }
+            
             {loading && <p className='text-2xl font-bold text-white text-center'>loading</p>}
             {!loading && data.length >0 &&
             
@@ -66,6 +73,7 @@ const page = () => {
                             <th className="px-4 py-2 border-2 border-gray-700">Id</th>
                             <th className="px-4 py-2 border-2 border-gray-700">Title</th>
                             {type === 'blog_posts' && <th className='px-4 py-2 border-2 border-gray-700'>Content</th>}
+                            {type === 'blog_posts' && <th className='px-4 py-2 border-2 border-gray-700'>Status</th>}
                             <th className='px-4 py-2 border-2 border-gray-700'>Actions</th>
                         </tr>
                     </thead>
@@ -76,8 +84,9 @@ const page = () => {
                                 <td  className='px-4 py-2 border-2 border-gray-700'>{item.id}</td>
                                 <td className='px-4 py-2 border-2 border-gray-700'>{item.title}</td>
                                 {type === 'blog_posts' && <td className='px-4 py-2 border-2 border-gray-700'>{item.content}</td>}
+                                {type === 'blog_posts' && <td className='px-4 py-2 border-2 border-gray-700'>{item.status}</td>}
                                 <td className='px-4 py-2 border-2 border-gray-700 flex gap-2 justify-center'>
-                                    <button ><GrView /></button>
+                                    <button onClick={()=>{views(type==='blog_posts'?item.content:item.title)}} ><GrView / ></button>
                                     <button ><FaRegEdit /></button>
                                     <button onClick={()=>{del(item.id)}} ><MdOutlineDelete  /></button>
 
