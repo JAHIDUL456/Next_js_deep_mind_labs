@@ -7,7 +7,7 @@ import { MdOutlineDelete } from "react-icons/md";
 
 
 
-const page = () => {
+const Page = () => {
 
     const [data, setdata]=useState([]);
     const [type, settype]=useState('');
@@ -114,4 +114,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
