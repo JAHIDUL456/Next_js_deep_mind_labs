@@ -44,7 +44,7 @@ const Page = () => {
     <div className='bg-[#1D202A]' >
         <div className='text-white max-w-6xl mx-auto p-6 flex'>
         
-        <div className='bg-gray-700 w-1/4 rounded-sm p-4 h-[30rem]'>
+        <div className='bg-gray-700 w-1/4 rounded-sm p-4 h-[30rem] sticky top-10'>
         <h1 className='text-2xl font-bold mb-6 text-center'>API Handling</h1>
         <div className='flex flex-col gap-2 items-center'>
             <div ><button onClick={()=>{fetchdata('blog_posts')}} className='bg-white text-black font-semibold p-2 px-3 rounded-md mb-2 hover:transform hover:scale-[1.2] transition-all ease-in-out duration-100'>Blog Post</button></div>
