@@ -6,13 +6,16 @@ import { FaRegEdit } from "react-icons/fa";
 import { MdOutlineDelete } from "react-icons/md";
 
 
-
 const Page = () => {
 
     const [data, setdata]=useState([]);
     const [type, settype]=useState('');
     const [loading, setloading]=useState(false);
 
+    // eigula dekte hobe 
+    //Typescript
+    //This should be implemented using axios
+    //Tanstack query 
 
     const fetchdata=async (endpoint)=>{
         setloading(true);
@@ -35,15 +38,6 @@ const Page = () => {
     const views=(content)=>{
         alert(content);
     }
-
-
-
-
-
-
-
-
-
 
 
   return (
